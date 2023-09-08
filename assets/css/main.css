@@ -1,29 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
-/*================ VARIABLES CSS ==========*/
-
 :root {
   --header-height: 3rem;
 
-  /*======= Colors =======*/
-  /* Change Favorite color */
   --hue-color: 240;
 
-  /*========= HSL Color mode =========*/
   --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 30%, 8%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-  --title-color: hsl(var(--hue-color), 8%, 15%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
-  --text-color-light: hsl(var(--hue-color), 8%, 65%);
-  --input-color: hsl(var(--hue-color), 70%, 96%);
-  --body-color: hsl(var(--hue-color), 60%, 99%);
-  --container-color: #fff;
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+  --title-color: hsl(var(--hue-color), 8%, 95%);
+  --text-color: hsl(var(--hue-color), 8%, 75%);
+  --input-color: hsl(var(--hue-color), 29%, 16%);
+  --body-color: hsl(var(--hue-color), 28%, 12%);
+  --container-color: hsl(var(--hue-color), 29%, 16%);
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 
-  /*========= Font and typography ===========*/
+  /*--------- Font and typography -----------*/
   --body-font: "Poppins", sans-serif;
 
   --big-font-size: 2rem;
@@ -34,12 +28,12 @@
   --small-font-size: 0.813rem;
   --smaller-font-size: 0.75rem;
 
-  /*=========== Font weight ==========*/
+  /*-------------- Font weight -----------*/
 
   --font-medium: 500;
   --font-semi-bold: 600;
 
-  /*============ Margin Bottom ===========*/
+  /*-------------- Margin Bottom ------------*/
   /* .25rem = 4px, .5rem=8px, .75rem = 12px*/
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
@@ -50,7 +44,7 @@
   --mb-2-5: 2.5rem;
   --mb-3: 3rem;
 
-  /*============== z index =============*/
+  /*------------- z index ---------------*/
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
@@ -68,21 +62,24 @@
     --smaller-font-size: 0.813rem;
   }
 }
-/*================= Variables Dark Theme ===============*/
-body.dark-theme {
-  /*========= HSL Color mode =========*/
+/*-------------- Variables Light Theme ---------------*/
+body.light-theme {
 
-  --first-color-second: hsl(var(--hue-color), 30%, 8%);
-  --title-color: hsl(var(--hue-color), 8%, 95%);
-  --text-color: hsl(var(--hue-color), 8%, 75%);
-  --input-color: hsl(var(--hue-color), 29%, 16%);
-  --body-color: hsl(var(--hue-color), 28%, 12%);
-  --container-color: hsl(var(--hue-color), 29%, 16%);
-  --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
-  --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color-second: hsl(var(--hue-color), 69%, 61%);
+  --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+  --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+  --title-color: hsl(var(--hue-color), 8%, 15%);
+  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color-light: hsl(var(--hue-color), 8%, 65%);
+  --input-color: hsl(var(--hue-color), 70%, 96%);
+  --body-color: hsl(var(--hue-color), 60%, 99%);
+  --container-color: #fff;
+  --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+  --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
 }
 
-/*================= Button Dark/Light ===============*/
+/*--------------- Button Dark/Light ----------*/
 .nav__btns {
   display: flex;
   align-items: center;
@@ -99,7 +96,7 @@ body.dark-theme {
   color: var(--first-color);
 }
 
-/*================= Base ===============*/
+/*------------ Base -------------------*/
 * {
   box-sizing: border-box;
   padding: 0;
@@ -115,6 +112,11 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+}
+
+#about{
+    top: 50%;
+      
 }
 
 h1,
@@ -163,6 +165,7 @@ img {
 }
 .header {
   width: 100%;
+  height: 20%;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -178,8 +181,23 @@ img {
   align-items: center;
 }
 
+.nav__btns{
+
+  margin-bottom: -5%;
+  margin-left: 3%;
+}
+
+.nav__menu{
+
+  margin-bottom: -5%;
+  
+}
+
 .nav__logo,
 .nav__toggle {
+
+  position: fixed;
+  margin-top: 5%;
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
@@ -206,6 +224,54 @@ img {
     border-radius: 1.5rem 1.5rem 0 0;
     transition: 0.3s;
   }
+  .header{
+    position:fixed;
+    top: -0.5%;
+    bottom: 50%;
+  }
+
+  .home__social{
+    position: sticky;
+    margin-top: 50%;
+  }
+
+  .change-theme{
+    position: fixed;
+    left: 76%;
+    top: 4%
+  }
+  .nav__btns{
+
+    position: fixed;
+    margin-left: 70%;
+    top: 12%;
+    
+  }
+
+  .nav__logo
+ {
+  
+    position: fixed;
+    margin-top: 25%;
+    margin-left: -10%;
+    font-weight: var(--font-medium);
+    height: 20%;
+  }
+ .footer__bg
+ {
+  height: 100%;
+  width: 100%;
+ }
+ p.footer__copy{
+  color: #fffefe;
+  text-decoration: solid;
+ }
+
+ .footer{
+  position: fixed;
+  
+ }
+
 }
 .nav__list {
   grid-template-columns: repeat(3, 1fr);
@@ -216,7 +282,7 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: var(--small-font-size);
+  font-size: 16px;
   color: var(--title-color);
   font-weight: var(--font-medium);
 }
@@ -259,7 +325,7 @@ img {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
-/*========HOME=============*/
+/*-------------- HOME ----------------*/
 .home__container {
   gap: 1rem;
 }
@@ -339,7 +405,7 @@ img {
   font-size: 1.25rem;
 }
 
-/*================== Buttons ===================*/
+/*-------------- Buttons -----------------*/
 .button {
   display: inline-block;
   background-color: var(--first-color);
@@ -387,7 +453,7 @@ img {
   color: var(--first-color-alt);
 }
 
-/*===================== About ==================*/
+/*------------------- About ------------------*/
 .about__img {
   width: 170px;
   border-radius: 500%;
@@ -400,6 +466,7 @@ img {
   text-align: center;
   margin-bottom: var(--mb-2-5);
 }
+
 
 .about__info {
   display: flex;
@@ -428,7 +495,7 @@ img {
   justify-content: center;
 }
 
-/*===================== SKILLS =========================*/
+/*--------------- SKILLS -------------------*/
 
 .skills__container {
   row-gap: 0;
@@ -490,42 +557,6 @@ img {
   background-color: var(--first-color);
 }
 
-.skills__html {
-  width: 90%;
-}
-.skills__css {
-  width: 80%;
-}
-.skills__js {
-  width: 55%;
-}
-.skills__react {
-  width: 40%;
-}
-
-.skills__php {
-  width: 80%;
-}
-.skills__node {
-  width: 70%;
-}
-.skills__firebase {
-  width: 75%;
-}
-.skills__python {
-  width: 50%;
-}
-
-.skills__figma {
-  width: 85%;
-}
-.skills__sketch {
-  width: 75%;
-}
-.skills__photoshop {
-  width: 60%;
-}
-
 .skills__close .skills__list {
   height: 0;
   overflow: hidden;
@@ -540,7 +571,7 @@ img {
   transform: rotate(-180deg);
 }
 
-/*==================== Qualifications ====================*/
+/*-------------- Qualifications ---------------------*/
 
 .qualification__tabs {
   display: flex;
@@ -567,6 +598,7 @@ img {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
+  margin-top: -15%;
 }
 
 .qualification__title {
@@ -612,7 +644,7 @@ img {
   color: var(--first-color);
 }
 
-/*================= Services ==================*/
+/*---------------- Services ------------------*/
 
 .services_container {
   gap: 1.5rem;
@@ -692,7 +724,7 @@ img {
   visibility: visible;
 }
 
-/*================== Portfolio ==================*/
+/*------------------ Project ------------------*/
 
 .portfolio__container {
   overflow: initial;
@@ -744,7 +776,7 @@ img {
   outline: none;
 }
 
-/*================ Contact Me ===============*/
+/*------------- Contact Me --------------------*/
 
 .contact__container {
   row-gap: 2rem;
@@ -791,7 +823,7 @@ img {
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
 
-/*=================== Footer ==================*/
+/*---------------- Footer ----------------------*/
 
 .footer {
   padding-top: 2rem;
@@ -850,7 +882,7 @@ img {
   color: #fff;
 }
 
-/*==================== Scroll Up ==================*/
+/*----------------- Scroll Up ----------------------*/
 
 .scrollup {
   position: fixed;
@@ -878,7 +910,7 @@ img {
   bottom: 5rem;
 }
 
-/*====================== Scroll Bar =====================*/
+/*----------------- Scroll Bar --------------------*/
 
 ::-webkit-scrollbar {
   width: 0.6rem;
@@ -895,7 +927,7 @@ img {
   background-color: var(--text-color-light);
 }
 
-/*======================== Media Queries ======================*/
+/*------------------ Media Queries ---------------------*/
 
 /* For Small Devices */
 @media screen and (max-width: 350px) {
@@ -906,6 +938,7 @@ img {
 
   .nav__menu {
     padding: 2rem 0.25rem 4rem;
+    
   }
 
   .nav__list {

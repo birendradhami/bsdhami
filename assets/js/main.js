@@ -13,7 +13,7 @@ if (navClose) {
   });
 }
 
-/*==================== REMOVE MENU MOBILE ====================*/
+/*---------------- REMOVE MENU MOBILE -------------------*/
 const navLink = document.querySelectorAll(".nav__link");
 
 function linkAction() {
@@ -23,7 +23,7 @@ function linkAction() {
 }
 navLink.forEach((n) => n.addEventListener("click", linkAction));
 
-/*======================= ACCORD SKILLS ======================*/
+/*----------------------- ACCORD SKILLS ------------------------------*/
 
 const skillsContent = document.getElementsByClassName("skills__content"),
   skillsHeader = document.querySelectorAll(".skills__header");
@@ -43,26 +43,7 @@ skillsHeader.forEach((el) => {
   el.addEventListener("click", toggleSkills);
 });
 
-/*============== Qualification Skills ===============*/
-
-/*const tabs = document.querySelectorAll('[data-target]'),
-      tabContents = document.querySelectorAll('[data-content]')
-tabs.forEach(tab =>{
-    tab.addEventListener('click', () =>{
-        const target = document.querySelector(tab.dataset.target)
-        tabContents.forEach(tabContent =>{
-            tabContent.classList.remove('qualification__active')
-        })
-        target.classList.add('qualification__active')
-        tab.forEach(tab =>{
-            tab.classList.remove('qualification__active')
-        })
-        tab.classList.add('qualification__active')
-    })
-})      
-*/
-
-/*======================= Services Modal ===================*/
+/*------------------ Services Modal ---------------------------*/
 const modalViews = document.querySelectorAll(".services__modal"),
   modalBtns = document.querySelectorAll(".services__button"),
   modalCloses = document.querySelectorAll(".services__modal-close");
@@ -85,7 +66,7 @@ modalCloses.forEach((modalClose) => {
   });
 });
 
-/*======================= Portfolio Swiper ===================*/
+/*------------------ Portfolio Swipe ----------------*/
 var swiper = new Swiper(".portfolio__container", {
   cssMode: true,
   loop: true,
@@ -100,7 +81,7 @@ var swiper = new Swiper(".portfolio__container", {
   },
 });
 
-/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+/*------------------- SCROLL SECTIONS ACTIVE LINK ---------------*/
 const sections = document.querySelectorAll("section[id]");
 
 function scrollActive() {
@@ -124,7 +105,7 @@ function scrollActive() {
 }
 window.addEventListener("scroll", scrollActive);
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/
+/*----------------- CHANGE BACKGROUND HEADER --------------*/
 function scrollHeader() {
   const nav = document.getElementById("header");
   // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
@@ -133,7 +114,7 @@ function scrollHeader() {
 }
 window.addEventListener("scroll", scrollHeader);
 
-/*==================== SHOW SCROLL up ====================*/
+/*---------------- SHOW SCROLL up ---------------------*/
 function scrollUp() {
   const scrollUp = document.getElementById("scroll-up");
   // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
@@ -142,9 +123,9 @@ function scrollUp() {
 }
 window.addEventListener("scroll", scrollUp);
 
-/*==================== DARK LIGHT THEME ====================*/
+/*------------------ DARK LIGHT THEME ----------------------*/
 const themeButton = document.getElementById("theme-button");
-const darkTheme = "dark-theme";
+const lightTheme = "light-theme";
 const iconTheme = "uil-sun";
 
 // Previously selected topic (if user selected)
@@ -153,7 +134,7 @@ const selectedIcon = localStorage.getItem("selected-icon");
 
 // We obtain the current theme that the interface has by validating the dark-theme class
 const getCurrentTheme = () =>
-  document.body.classList.contains(darkTheme) ? "light" : "dark";
+  document.body.classList.contains(lightTheme) ? "light" : "dark";
 const getCurrentIcon = () =>
   themeButton.classList.contains(iconTheme) ? "uil-sun" : "uil-moon";
 
@@ -161,7 +142,7 @@ const getCurrentIcon = () =>
 if (selectedTheme) {
   // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
-    darkTheme,
+    lightTheme,
   );
   themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
     iconTheme,
@@ -170,8 +151,8 @@ if (selectedTheme) {
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener("click", () => {
-  // Add or remove the dark / icon theme
-  document.body.classList.toggle(darkTheme);
+  // Add or remove the light / icon theme
+  document.body.classList.toggle(lightTheme);
   themeButton.classList.toggle(iconTheme);
   // We save the theme and the current icon that the user chose
   localStorage.setItem("selected-theme", getCurrentTheme());
