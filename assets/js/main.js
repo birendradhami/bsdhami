@@ -1,3 +1,13 @@
+/*-----------WD ALIGN--------------------*/
+
+const resizeOps = () => {
+  document.documentElement.style.setProperty("--vh", window.innerHeight * 0.01 + "px");
+};
+
+resizeOps();
+window.addEventListener("resize", resizeOps);
+
+/*--------------HTML ELEMENTS--------------*/
 const navMenu = document.getElementById("nav-menu"),
   navToggle = document.getElementById("nav-toggle");
 navClose = document.getElementById("nav-close");
@@ -126,7 +136,7 @@ window.addEventListener("scroll", scrollUp);
 /*------------------ DARK LIGHT THEME ----------------------*/
 const themeButton = document.getElementById("theme-button");
 const lightTheme = "light-theme";
-const iconTheme = "uil-sun";
+const iconTheme = "uil-sunset";
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
@@ -136,7 +146,7 @@ const selectedIcon = localStorage.getItem("selected-icon");
 const getCurrentTheme = () =>
   document.body.classList.contains(lightTheme) ? "light" : "dark";
 const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-sun" : "uil-moon";
+  themeButton.classList.contains(iconTheme) ? "uil-sunset" : "uil-moonset";
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {

@@ -3,7 +3,7 @@
 :root {
   --header-height: 3rem;
 
-  --hue-color: 240;
+  --hue-color: 245;
 
   --first-color: hsl(var(--hue-color), 69%, 61%);
   --first-color-second: hsl(var(--hue-color), 30%, 8%);
@@ -34,7 +34,7 @@
   --font-semi-bold: 600;
 
   /*-------------- Margin Bottom ------------*/
-  /* .25rem = 4px, .5rem=8px, .75rem = 12px*/
+  
   --mb-0-25: 0.25rem;
   --mb-0-5: 0.5rem;
   --mb-0-75: 0.75rem;
@@ -70,7 +70,7 @@ body.light-theme {
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
   --title-color: hsl(var(--hue-color), 8%, 15%);
-  --text-color: hsl(var(--hue-color), 8%, 45%);
+  --text-color: black;
   --text-color-light: hsl(var(--hue-color), 8%, 65%);
   --input-color: hsl(var(--hue-color), 70%, 96%);
   --body-color: hsl(var(--hue-color), 60%, 99%);
@@ -102,6 +102,12 @@ body.light-theme {
   padding: 0;
   margin: 0;
 }
+
+html, body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
 
 html {
   scroll-behavior: smooth;
@@ -212,17 +218,67 @@ img {
 .nav__toggle:hover {
   color: var(--first-color);
 }
+
+.contact-btn{
+  color: var(--first-color);
+    font-size: 3rem;
+
+}
+.contact-btn:hover{
+
+  color: var(--first-color-lighter);
+}
+
+.cui {
+  position: absolute;
+  bottom: 10.5rem;
+}
+
+@media screen and (min-width: 767px) {
+  .hide-on-desktop {
+    display: none;
+  }
+}
+
+
 @media screen and (max-width: 767px) {
+
+.show-on-desktop {
+    display: block;
+  }
+
+.hide-on-mobile{
+
+  display: none;
+}
+  .body
+{
+  margin: auto;
+}
+
+.main
+{
+  margin-top: 100px;
+}
+
+.cui{
+   margin:12%;
+   left: 7%;
+}
   .nav__menu {
     position: fixed;
     bottom: -100%;
-    left: 0;
-    width: 100%;
+    width: 80%;
+    height: 50%;
     background-color: var(--body-color);
     padding: 2rem 1.5rem 4rem;
     box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
     border-radius: 1.5rem 1.5rem 0 0;
     transition: 0.3s;
+  }
+  .nav__close
+  {
+    top: 60%;
   }
   .header{
     position:fixed;
@@ -238,7 +294,7 @@ img {
   .change-theme{
     position: fixed;
     left: 76%;
-    top: 4%
+    top: 3%
   }
   .nav__btns{
 
@@ -263,12 +319,13 @@ img {
   width: 100%;
  }
  p.footer__copy{
-  color: #fffefe;
+
   text-decoration: solid;
  }
 
  .footer{
-  position: fixed;
+  position: static;
+  bottom: -10%;
   
  }
 
@@ -453,7 +510,8 @@ img {
   color: var(--first-color-alt);
 }
 
-/*------------------- About ------------------*/
+/*------------------- Info ------------------*/
+
 .about__img {
   width: 170px;
   border-radius: 500%;
@@ -494,6 +552,18 @@ img {
   display: flex;
   justify-content: center;
 }
+
+.download-btn
+{  cursor: pointer;
+  margin-top: 10%;
+  color: var(--text-color);
+  font-size: var(--h5-font-size);
+  font-weight: var(--);
+  
+}
+
+#download-btn:hover #button__icon{
+  transform: translate3d(1rem);}
 
 /*--------------- SKILLS -------------------*/
 
@@ -732,6 +802,7 @@ img {
 /*need change*/
 .portfolio__content {
   padding: 0 1.5rem;
+  text-align: center;
 }
 .portfolio__img {
   width: 310px;
@@ -779,22 +850,23 @@ img {
 /*------------- Contact Me --------------------*/
 
 .contact__container {
+
+  
   row-gap: 2rem;
 }
 
 .contact__information {
-  display: flex;
-  margin-bottom: var(--mb-2);
+text-align: center;
 }
 
 .contact__icon {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: var(--first-color);
   margin-right: var(--mb-0-75);
 }
 
 .contact__title {
-  font-size: var(--h3-font-size);
+  font-size: var(--h5-font-size);
   font-weight: var(--font-medium);
 }
 
@@ -823,6 +895,7 @@ img {
   padding: 0.25rem 0.5rem 0.5rem 0;
 }
 
+
 /*---------------- Footer ----------------------*/
 
 .footer {
@@ -834,7 +907,7 @@ img {
 }
 
 .footer__bg {
-  background-color: var(--first-color-second);
+  background-color: var(--body-color);
   padding: 2rem 0 3rem;
 }
 
@@ -871,7 +944,7 @@ img {
 .footer__copy {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--text-color-light);
+  color: var(--text-color);
   margin-top: var(--mb-3);
 }
 
@@ -886,7 +959,7 @@ img {
 
 .scrollup {
   position: fixed;
-  right: 1rem;
+  right: 80rem;
   bottom: -20%;
   background-color: var(--first-color);
   opacity: 0.8;
@@ -1026,12 +1099,12 @@ img {
     padding: 6rem 0 4rem;
   }
 
-  .section__subtitle {
+  .section__gap {
     margin-bottom: 4rem;
   }
 
   .header {
-    top: 0;
+    top: 1;
     bottom: initial;
   }
 
@@ -1150,6 +1223,7 @@ img {
 
   .footer__container {
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
   }
 
   .footer__bg {
@@ -1166,7 +1240,8 @@ img {
   }
 
   .footer__copy {
-    margin-top: 4.5rem;
+    margin-top: 1rem;
+    font-size: var(--font-medium);
   }
 }
 
