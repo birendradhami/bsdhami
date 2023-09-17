@@ -136,7 +136,7 @@ window.addEventListener("scroll", scrollUp);
 /*------------------ DARK LIGHT THEME ----------------------*/
 const themeButton = document.getElementById("theme-button");
 const lightTheme = "light-theme";
-const iconTheme = "uil-sunset";
+const iconTheme = "bi-sun-fill";
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem("selected-theme");
@@ -146,7 +146,7 @@ const selectedIcon = localStorage.getItem("selected-icon");
 const getCurrentTheme = () =>
   document.body.classList.contains(lightTheme) ? "light" : "dark";
 const getCurrentIcon = () =>
-  themeButton.classList.contains(iconTheme) ? "uil-sunset" : "uil-moonset";
+  themeButton.classList.contains(iconTheme) ? "bi-sun-fill" : "bi-moon-stars-fill";
 
 // We validate if the user previously chose a topic
 if (selectedTheme) {
@@ -154,7 +154,7 @@ if (selectedTheme) {
   document.body.classList[selectedTheme === "dark" ? "add" : "remove"](
     lightTheme,
   );
-  themeButton.classList[selectedIcon === "uil-moon" ? "add" : "remove"](
+  themeButton.classList[selectedIcon === "bi-moon-stars-fill" ? "add" : "remove"](
     iconTheme,
   );
 }
